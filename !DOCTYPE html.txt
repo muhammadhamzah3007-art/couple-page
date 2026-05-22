@@ -299,18 +299,18 @@
 
             <!-- Stage 2: Main question -->
             <div id="stage2" class="hidden">
-                <h1 class="title">Kamu sayang aku gak? 💕</h1>
+                <h1 class="title">sayang Muhammad Hamzah gak?</h1>
                 <div class="emoji-large">👉👈</div>
                 <div class="button-container">
-                    <button class="btn-primary" onclick="goToStage3()">Sayang ❤️</button>
-                    <button class="btn-no" id="noBtn" onmouseenter="avoidMouse()" ontouchstart="avoidMouse()">Enggak 😐</button>
+                    <button class="btn-primary" onclick="goToStage3()">IYALAHHHHH</button>
+                    <button class="btn-no" id="noBtn" onmouseenter="avoidMouse()" ontouchstart="avoidMouse()">gak ah males</button>
                 </div>
                 <p class="warning-text" id="warningText"></p>
             </div>
 
             <!-- Stage 3: Success -->
             <div id="stage3" class="hidden">
-                <h1 class="title success-message">Yeyyy aku tau kok 😎❤️</h1>
+                <h1 class="title success-message">udah pasti sihhhhh</h1>
                 <div class="emoji-large" style="animation: bounce 0.6s ease-in-out infinite;">💕</div>
                 <img id="couplePhoto" src="https://images.unsplash.com/photo-1516962915623-eac32e016b12?w=500&q=80" alt="Couple" class="couple-photo">
                 <p style="color: #ff69b4; font-size: 16px; margin-top: 20px; font-weight: 500;">🎵 Musik romantis sedang memutar... 🎵</p>
@@ -322,16 +322,12 @@
     <script>
         // Array of funny/cute warnings
         const warnings = [
-            "Yakin? 🥺",
-            "Jangan bohong 😭",
-            "Aku sedih loh 💔",
-            "Coba pikir lagi 😤",
-            "Serius nih? 😢",
-            "Aku nunggu jawaban yang bener 🥺",
-            "Hati aku sakit... 💔",
-            "Boong lagi? 😭",
-            "Pikir dulu dong! 🤔",
-            "Jangan gitu... 😢"
+            "dihhhhh",
+            "mang yakkk",
+            "parahh betttt ",
+            "sumpahhh??",
+            "yakali nggak",
+          
         ];
 
         function goToStage2() {
