@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAWAB YANG BENER YAKKKK!!!!!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #fffbf0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,245,247,0.95) 100%);
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(255,105,180,0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,182,193,0.3);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff69b4, #ffb6c1, #ffc0cb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .emoji-large {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff69b4, #ff85c0);
+            color: white;
+            min-width: 180px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,105,180,0.35);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #ffd4e5, #ffe5ef);
+            color: #ff69b4;
+            min-width: 150px;
+            position: relative;
+        }
+
+        .btn-no:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,182,193,0.35);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #ffffff, #fff5f7);
+            color: #ff69b4;
+            border: 2px solid #ffb6c1;
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #fff5f7, #fffbf0);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,182,193,0.3);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .heart-animation {
+            position: fixed;
+            font-size: 30px;
+            pointer-events: none;
+            animation: heartFall 3s ease-in forwards;
+            z-index: 1000;
+        }
+
+        @keyframes heartFall {
+            0% {
+                opacity: 1;
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(100px) rotate(360deg);
+            }
+        }
+
+        .couple-photo {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 15px 40px rgba(255,105,180,0.25);
+            animation: photoAppear 0.8s ease-out;
+            border: 3px solid rgba(255,182,193,0.5);
+        }
+
+        @keyframes photoAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .success-message {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff69b4, #ffb6c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .warning-text {
+            color: #ff69b4;
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: 600;
+            animation: wiggle 0.3s ease-in-out;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .card {
+                padding: 30px 20px;
+                border-radius: 25px;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .emoji-large {
+                font-size: 50px;
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+
+            .couple-photo {
+                max-width: 250px;
+                height: 250px;
+            }
+
+            .success-message {
+                font-size: 20px;
+            }
+
+            .button-container {
+                gap: 10px;
+            }
+        }
+
+        /* Decorative elements */
+        .decoration {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.3;
+            font-size: 40px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .deco1 {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .deco2 {
+            top: 70%;
+            right: 8%;
+            animation-delay: 1s;
+        }
+
+        .deco3 {
+            bottom: 15%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative elements -->
+    <div class="decoration deco1">💕</div>
+    <div class="decoration deco2">✨</div>
+    <div class="decoration deco3">💕</div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Stage 1: Initial question -->
+            <div id="stage1">
+                <h1 class="title">JAWAB YANG BENER YAKK!!</h1>
+                <button class="btn-primary" onclick="goToStage2()">Apa tuh?</button>
+            </div>
+
+            <!-- Stage 2: Main question -->
+            <div id="stage2" class="hidden">
+                <h1 class="title">sayang Muhammad Hamzah gak?</h1>
+                <div class="button-container">
+                    <button class="btn-primary" onclick="goToStage3()">IYALAHHHHH</button>
+                    <button class="btn-no" id="noBtn" onmouseenter="avoidMouse()" ontouchstart="avoidMouse()">gak ah males</button>
+                </div>
+                <p class="warning-text" id="warningText"></p>
+            </div>
+
+            <!-- Stage 3: Success -->
+            <div id="stage3" class="hidden">
+                <h1 class="title success-message">udah pasti sihhhhh</h1>
+                <div class="emoji-large" style="animation: bounce 0.6s ease-in-out infinite;">💕</div>
+                <button class="btn-secondary" onclick="location.reload()">Ulangi 💫</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array of funny/cute warnings
+        const warnings = [
+            "dihhhhh",
+            "mang yakkk",
+            "parahh betttt ",
+            "sumpahhh??",
+            "yakali nggak",
+          
+        ];
+
+        function goToStage2() {
+            document.getElementById('stage1').classList.add('hidden');
+            document.getElementById('stage2').classList.remove('hidden');
+        }
+
+        function goToStage3() {
+            document.getElementById('stage2').classList.add('hidden');
+            document.getElementById('stage3').classList.remove('hidden');
+            triggerHeartAnimation();
+            playBackgroundMusic();
+        }
+
+        function avoidMouse() {
+            const btn = document.getElementById('noBtn');
+            const randomX = Math.random() * 200 - 100;
+            const randomY = Math.random() * 200 - 100;
+            
+            btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            btn.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            
+            // Show warning text
+            const randomWarning = warnings[Math.floor(Math.random() * warnings.length)];
+            document.getElementById('warningText').textContent = randomWarning;
+        }
+
+        function triggerHeartAnimation() {
+            // Create multiple hearts falling
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-animation';
+                    heart.textContent = '❤️';
+                    heart.style.left = Math.random() * window.innerWidth + 'px';
+                    heart.style.top = '-30px';
+                    document.body.appendChild(heart);
+                    
+                    // Remove element after animation
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 100);
+            }
+        }
+
+        function playBackgroundMusic() {
+            // Create a simple romantic background sound using Web Audio API
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            // Soft romantic tones
+            oscillator.frequency.value = 320; // C note
+            gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 4);
+        }
+
+        // Add bounce animation keyframes dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        console.log('💕 Website loaded! Enjoy your romantic moment! 💕');
+    </script>
+</body>
+</html>
