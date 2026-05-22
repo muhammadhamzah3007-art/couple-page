@@ -292,15 +292,13 @@
         <div class="card">
             <!-- Stage 1: Initial question -->
             <div id="stage1">
-                <h1 class="title">Aku ada pertanyaan penting buat kamu 👀</h1>
-                <div class="emoji-large">🎀</div>
+                <h1 class="title">JAWAB YANG BENER YAKK!!</h1>
                 <button class="btn-primary" onclick="goToStage2()">Apa tuh?</button>
             </div>
 
             <!-- Stage 2: Main question -->
             <div id="stage2" class="hidden">
                 <h1 class="title">sayang Muhammad Hamzah gak?</h1>
-                <div class="emoji-large">👉👈</div>
                 <div class="button-container">
                     <button class="btn-primary" onclick="goToStage3()">IYALAHHHHH</button>
                     <button class="btn-no" id="noBtn" onmouseenter="avoidMouse()" ontouchstart="avoidMouse()">gak ah males</button>
@@ -312,8 +310,6 @@
             <div id="stage3" class="hidden">
                 <h1 class="title success-message">udah pasti sihhhhh</h1>
                 <div class="emoji-large" style="animation: bounce 0.6s ease-in-out infinite;">💕</div>
-                <img id="couplePhoto" src="https://images.unsplash.com/photo-1516962915623-eac32e016b12?w=500&q=80" alt="Couple" class="couple-photo">
-                <p style="color: #ff69b4; font-size: 16px; margin-top: 20px; font-weight: 500;">🎵 Musik romantis sedang memutar... 🎵</p>
                 <button class="btn-secondary" onclick="location.reload()">Ulangi 💫</button>
             </div>
         </div>
